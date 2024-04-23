@@ -110,66 +110,14 @@
             placeholder=""
           />
         </div>
-        <!-- <input
-      type="hidden"
-      formControlName="categoria_producto_id"
-      name="categoria_producto_id"
-      value="1"
-      id="categoria_producto_id"
-      class="form-control"
-    /> -->
 
         <button
           type="submit"
           class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         >
-          Crear Producto
+          Actualizar
         </button>
       </form>
     </div>
   </div>
 </div>
-
-<!-- <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-  <div
-    class="flex justify-center bg-white overflow-hidden shadow-xl sm:rounded-lg px-4 py-4"
-  >
-    <form (ngSubmit)="onSubmit()" [formGroup]="form" class="my-10">
-      <p class="text-xs text-gray-400">
-        Dimensiones recomendadas: 750px por 750px.
-      </p>
-      <div class="mb-6">
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="nombre">
-          Nombre del producto
-        </label>
-        <input
-          formControlName="nombre"
-          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          id="nombre"
-          type="text"
-          placeholder="Nombre del producto"
-        />
-      </div>
-      <div class="form-group py-5">
-        <label for="image">Cargar imagen </label>
-        <input
-          type="file"
-          formControlName="image"
-          name="image"
-          id="image"
-          class="form-control"
-          (change)="uploadImage($event)"
-        />
-
-        <div *ngIf="submitted && f['image'].errors" class="invalid-feedback">
-          <div *ngIf="f['image'].errors['required']">Image is required</div>
-        </div>
-      </div>
-      <button type="submit" class="boton-azul">Actualizar</button>
-    </form>
-  </div>
-  <a routerLink="/admin/cursos"
-    ><button class="boton-rojo mt-5">Atras</button></a
-  >
-</div>
- -->

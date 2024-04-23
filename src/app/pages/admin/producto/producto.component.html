@@ -14,11 +14,11 @@
           *ngFor="let item of listCategories"
           class="text-sm font-medium text-gray-900"
         >
-          <td class="px-6 py-4">{{ item.imagen }}</td>
+          <td class="px-6 py-4">{{ item.nombre }}</td>
           <td class="px-6 py-4">
             <img
-              class="max-w-xs"
-              src="{{ urlRaiz + item.url_imagen }}"
+              class="max-w-[30%]"
+              src="{{ urlRaiz + item.ruta_imagen }}"
               alt=""
             />
           </td>
