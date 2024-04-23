@@ -29,6 +29,9 @@ import { UpdateMisionComponent } from './pages/admin/mision/update-mision/update
 import { CarouselComponent } from './pages/admin/carousel/carousel.component';
 import { UpdateFileCarouselComponent } from './pages/admin/carousel/update-file-carousel/update-file-carousel.component';
 import { VerCursoComponent } from './layout/componentes/ver-curso/ver-curso.component';
+import { ProductoComponent } from './pages/admin/producto/producto.component';
+import { CreateComponent } from './pages/admin/producto/create/create.component';
+import { EditComponent } from './pages/admin/producto/edit/edit.component';
 
 export const routes: Routes = [
   {
@@ -109,6 +112,21 @@ export const routes: Routes = [
         path: 'carousel/update/file',
         canActivate: [AuthGuard],
         component: UpdateFileCarouselComponent,
+      },
+      {
+        path: 'cursos',
+        canActivate: [AuthGuard],
+        component: ProductoComponent,
+      },
+      {
+        path: 'cursos/create',
+        canActivate: [AuthGuard],
+        component: CreateComponent,
+      },
+      {
+        path: 'cursos/edit',
+        canActivate: [AuthGuard],
+        component: EditComponent,
       },
     ],
   },

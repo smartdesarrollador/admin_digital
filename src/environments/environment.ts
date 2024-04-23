@@ -23,6 +23,10 @@
   apiUpdateFileCarousel: 'https://apilegajo.amorinomoda.com/api/carousel/update/upload',
   apiListarFilesCarousel: 'https://apilegajo.amorinomoda.com/api/carousel/listar/files',
   apiDeleteFileCarousel: 'https://apilegajo.amorinomoda.com/api/carousel/update/upload',
+  apiUrl3Producto: 'https://apilegajo.amorinomoda.com/api/productos/subir',
+  apiUpdateFileProducto: 'https://apilegajo.amorinomoda.com/api/productos/update',
+  apiListarFilesProducto: 'https://apilegajo.amorinomoda.com/api/productos',
+  apiDeleteFileProducto: 'https://apilegajo.amorinomoda.com/api/productos',
 }; */
 
 export const environment = {
@@ -52,4 +56,8 @@ export const environment = {
     'https://back.iatecdigital.com/api/carousel/listar/files',
   apiDeleteFileCarousel:
     'https://back.iatecdigital.com/api/carousel/update/upload',
+  apiUrl3Producto: 'https://back.iatecdigital.com/api/productos/subir',
+  apiUpdateFileProducto: 'https://back.iatecdigital.com/api/productos/update',
+  apiListarFilesProducto: 'https://back.iatecdigital.com/api/productos',
+  apiDeleteFileProducto: 'https://back.iatecdigital.com/api/productos',
 };

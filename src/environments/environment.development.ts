@@ -22,4 +22,8 @@ export const environment = {
   apiUpdateFileCarousel: 'http://127.0.0.1:8000/api/carousel/update/upload',
   apiListarFilesCarousel: 'http://127.0.0.1:8000/api/carousel/listar/files',
   apiDeleteFileCarousel: 'http://127.0.0.1:8000/api/carousel/update/upload',
+  apiUrl3Producto: 'http://127.0.0.1:8000/api/productos/subir',
+  apiUpdateFileProducto: 'http://127.0.0.1:8000/api/productos/update',
+  apiListarFilesProducto: 'http://127.0.0.1:8000/api/productos',
+  apiDeleteFileProducto: 'http://127.0.0.1:8000/api/productos',
 };
