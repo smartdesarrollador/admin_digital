@@ -14,6 +14,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router, ActivatedRoute, RouterLink } from '@angular/router';
 import Swal from 'sweetalert2';
 import { environment } from 'src/environments/environment';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
   selector: 'app-edit',
@@ -24,6 +26,7 @@ import { environment } from 'src/environments/environment';
     ReactiveFormsModule,
     HttpClientModule,
     RouterLink,
+    CKEditorModule,
   ],
   templateUrl: './edit.component.html',
   styleUrl: './edit.component.css',
@@ -37,6 +40,7 @@ export class EditComponent {
   urlRaiz = environment.urlRaiz + '/';
   valor_id_producto: any;
   categoriaProductoId: any = 1;
+  public Editor = ClassicEditor;
   post = new Producto();
   constructor(
     private formBuilder: FormBuilder,

@@ -8,11 +8,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { environment } from 'src/environments/environment';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
   selector: 'app-create',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, HttpClientModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    CKEditorModule,
+  ],
   templateUrl: './create.component.html',
   styleUrl: './create.component.css',
 })
@@ -24,6 +32,7 @@ export class CreateComponent {
   form: FormGroup = new FormGroup({});
   urlRaiz = environment.urlRaiz + '/';
   categoriaProductoId: any = 1;
+  public Editor = ClassicEditor;
   post = new Producto();
   constructor(
     private formBuilder: FormBuilder,
