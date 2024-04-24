@@ -10,7 +10,7 @@ import Swal from 'sweetalert2';
 import { environment } from 'src/environments/environment';
 
 @Component({
-  selector: 'app-producto',
+  selector: 'app-especialidad',
   standalone: true,
   imports: [
     CommonModule,
@@ -19,10 +19,10 @@ import { environment } from 'src/environments/environment';
     HttpClientModule,
     RouterLink,
   ],
-  templateUrl: './producto.component.html',
-  styleUrl: './producto.component.css',
+  templateUrl: './especialidad.component.html',
+  styleUrl: './especialidad.component.css',
 })
-export class ProductoComponent {
+export class EspecialidadComponent {
   listCategories: any = [];
   files_date: any;
   submitted = false;
@@ -42,7 +42,7 @@ export class ProductoComponent {
   }
 
   loadCategories() {
-    return this.dataService.getCursos().subscribe((data: {}) => {
+    return this.dataService.getEspecialidades().subscribe((data: {}) => {
       console.log(data);
       this.listCategories = data;
     });
@@ -119,7 +119,7 @@ export class ProductoComponent {
   onEdit(category: Producto) {
     console.log(category);
     this.dataService.selectCategory = Object.assign({}, category);
-    this.router.navigate(['/admin/cursos/edit'], {
+    this.router.navigate(['/admin/especialidades/edit'], {
       queryParams: { categoryId: category.id_producto },
     });
   }

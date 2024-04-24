@@ -32,6 +32,9 @@ import { VerCursoComponent } from './layout/componentes/ver-curso/ver-curso.comp
 import { ProductoComponent } from './pages/admin/producto/producto.component';
 import { CreateComponent } from './pages/admin/producto/create/create.component';
 import { EditComponent } from './pages/admin/producto/edit/edit.component';
+import { EspecialidadComponent } from './pages/admin/especialidad/especialidad.component';
+import { CreateEspecialidadComponent } from './pages/admin/especialidad/create-especialidad/create-especialidad.component';
+import { EditEspecialidadComponent } from './pages/admin/especialidad/edit-especialidad/edit-especialidad.component';
 
 export const routes: Routes = [
   {
@@ -127,6 +130,21 @@ export const routes: Routes = [
         path: 'cursos/edit',
         canActivate: [AuthGuard],
         component: EditComponent,
+      },
+      {
+        path: 'especialidades',
+        canActivate: [AuthGuard],
+        component: EspecialidadComponent,
+      },
+      {
+        path: 'especialidades/create',
+        canActivate: [AuthGuard],
+        component: CreateEspecialidadComponent,
+      },
+      {
+        path: 'especialidades/edit',
+        canActivate: [AuthGuard],
+        component: EditEspecialidadComponent,
       },
     ],
   },

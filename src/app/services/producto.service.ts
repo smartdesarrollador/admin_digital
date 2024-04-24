@@ -16,12 +16,22 @@ import { Observable } from 'rxjs';
 export class ProductoService {
   selectCategory: Producto = new Producto();
   urlListar = environment.apiListarFilesProducto;
+  urlListarCursos = environment.apiListarCursosProducto;
+  urlListarEspecialidades = environment.apiListarEspecialidadesProducto;
   urlUpdateFile = environment.apiUpdateFileProducto;
   urlDelete = environment.apiDeleteFileProducto;
   constructor(private http: HttpClient) {}
 
   getCategories(): Observable<Producto> {
     return this.http.get(this.urlListar);
+  }
+
+  getCursos(): Observable<Producto> {
+    return this.http.get(this.urlListarCursos);
+  }
+
+  getEspecialidades(): Observable<Producto> {
+    return this.http.get(this.urlListarEspecialidades);
   }
 
   uploadData(data: any) {
