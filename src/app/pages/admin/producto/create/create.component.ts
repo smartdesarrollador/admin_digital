@@ -55,10 +55,11 @@ export class CreateComponent {
   createForm() {
     this.form = this.formBuilder.group({
       nombre: [null, Validators.required],
+      resumen: [null, Validators.required],
       descripcion: [null, Validators.required],
       duracion: [null, Validators.required],
       image: [null, Validators.required],
-      maestro: [null, Validators.required],
+      /* maestro: [null, Validators.required], */
       observacion: [null, Validators.required],
       precio: [null, Validators.required],
       /* categoria_producto_id: [null, Validators.required], */
@@ -108,10 +109,11 @@ export class CreateComponent {
 
     const formData = new FormData();
     formData.append('nombre', this.form.value.nombre);
+    formData.append('resumen', this.form.value.resumen);
     formData.append('descripcion', this.form.value.descripcion);
     formData.append('duracion', this.form.value.duracion);
     formData.append('imagen', this.files_date, this.files_date.name);
-    formData.append('maestro', this.form.value.maestro);
+    /* formData.append('maestro', this.form.value.maestro); */
     formData.append('observacion', this.form.value.observacion);
     formData.append('precio', this.form.value.precio);
     formData.append('categoria_producto_id', this.categoriaProductoId);
