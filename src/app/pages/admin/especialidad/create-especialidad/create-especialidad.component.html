@@ -2,7 +2,9 @@
   <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">
     <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg px-4 py-4">
       <!--Tabla lista de items   -->
-
+      <h2 class="text-center text-xl text-blue-500 font-bold">
+        Crear Especialidad
+      </h2>
       <form
         (ngSubmit)="onSubmit()"
         [formGroup]="form"
@@ -12,7 +14,7 @@
           <label
             for="base-input"
             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-            >Nombre</label
+            >Nombre de la Especialidad</label
           >
           <input
             type="text"
@@ -26,7 +28,7 @@
           <label
             for="base-input"
             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-            >Resumen</label
+            >Resumen del contenido</label
           >
           <input
             type="text"
@@ -40,7 +42,7 @@
           <label
             for="base-input"
             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-            >Descripción</label
+            >Contenido</label
           >
 
           <ckeditor
@@ -76,7 +78,7 @@
           <label
             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             for="image"
-            >Subir Imagen</label
+            >Imagen</label
           >
           <input
             formControlName="image"
@@ -149,7 +151,7 @@
           type="submit"
           class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         >
-          Crear Producto
+          Guardar
         </button>
       </form>
     </div>

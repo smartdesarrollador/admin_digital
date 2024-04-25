@@ -42,10 +42,10 @@ export const routes: Routes = [
     component: PortalComponent,
   },
   {
-    path: 'auth',
+    path: '',
     children: [
       {
-        path: 'login',
+        path: '',
         component: LoginComponent,
       },
       {
@@ -54,7 +54,7 @@ export const routes: Routes = [
       },
     ],
   },
-  {
+  /*  {
     path: '',
     component: VistaComponent,
     children: [
@@ -71,7 +71,7 @@ export const routes: Routes = [
         component: VerCursoComponent,
       },
     ],
-  },
+  }, */
   {
     path: 'admin',
     component: AdminComponent,
