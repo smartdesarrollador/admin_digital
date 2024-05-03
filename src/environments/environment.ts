@@ -29,6 +29,7 @@
   apiListarCursosProducto: 'https://apilegajo.amorinomoda.com/api/productos/cursos',
   apiListarEspecialidadesProducto: 'https://apilegajo.amorinomoda.com/api/productos/especialidades',
   apiDeleteFileProducto: 'https://apilegajo.amorinomoda.com/api/productos',
+  apiListarContactos: 'https://apilegajo.amorinomoda.com/api/contactos',
 }; */
 
 export const environment = {
@@ -65,4 +66,5 @@ export const environment = {
   apiListarEspecialidadesProducto:
     'https://back.iatecdigital.com/api/productos/especialidades',
   apiDeleteFileProducto: 'https://back.iatecdigital.com/api/productos',
+  apiListarContactos: 'https://back.iatecdigital.com/api/contactos',
 };

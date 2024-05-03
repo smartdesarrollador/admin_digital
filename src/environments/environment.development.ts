@@ -29,4 +29,5 @@ export const environment = {
   apiListarEspecialidadesProducto:
     'http://127.0.0.1:8000/api/productos/especialidades',
   apiDeleteFileProducto: 'http://127.0.0.1:8000/api/productos',
+  apiListarContactos: 'http://127.0.0.1:8000/api/contactos',
 };

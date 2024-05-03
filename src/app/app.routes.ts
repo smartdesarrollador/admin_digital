@@ -35,6 +35,7 @@ import { EditComponent } from './pages/admin/producto/edit/edit.component';
 import { EspecialidadComponent } from './pages/admin/especialidad/especialidad.component';
 import { CreateEspecialidadComponent } from './pages/admin/especialidad/create-especialidad/create-especialidad.component';
 import { EditEspecialidadComponent } from './pages/admin/especialidad/edit-especialidad/edit-especialidad.component';
+import { ContactoComponent } from './pages/admin/contacto/contacto.component';
 
 export const routes: Routes = [
   {
@@ -145,6 +146,11 @@ export const routes: Routes = [
         path: 'especialidades/edit',
         canActivate: [AuthGuard],
         component: EditEspecialidadComponent,
+      },
+      {
+        path: 'contactos',
+        canActivate: [AuthGuard],
+        component: ContactoComponent,
       },
     ],
   },
