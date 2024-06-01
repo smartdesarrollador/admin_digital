@@ -120,7 +120,7 @@ export class EditTestimonioComponent {
 
     const formData = new FormData();
     formData.append('id_testimonio', this.valor_id_testimonio);
-    formData.append('titulo', this.form.value.nombre);
+    formData.append('titulo', this.form.value.titulo);
     formData.append('descripcion', this.form.value.descripcion);
 
     if (this.files_date) {
