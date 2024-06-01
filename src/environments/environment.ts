@@ -30,6 +30,10 @@
   apiListarEspecialidadesProducto: 'https://apilegajo.amorinomoda.com/api/productos/especialidades',
   apiDeleteFileProducto: 'https://apilegajo.amorinomoda.com/api/productos',
   apiListarContactos: 'https://apilegajo.amorinomoda.com/api/contactos',
+  apiUrl3Testimonio: 'https://apilegajo.amorinomoda.com/api/testimonios/subir',
+  apiUpdateFileTestimonio: 'https://apilegajo.amorinomoda.com/api/testimonios/update',
+  apiListarFilesTestimonio: 'https://apilegajo.amorinomoda.com/api/testimonios',
+  apiDeleteFileTestimonio: 'https://apilegajo.amorinomoda.com/api/testimonios',
 }; */
 
 export const environment = {
@@ -67,4 +71,9 @@ export const environment = {
     'https://back.iatecdigital.com/api/productos/especialidades',
   apiDeleteFileProducto: 'https://back.iatecdigital.com/api/productos',
   apiListarContactos: 'https://back.iatecdigital.com/api/contactos',
+  apiUrl3Testimonio: 'https://back.iatecdigital.com/api/testimonios/subir',
+  apiUpdateFileTestimonio:
+    'https://back.iatecdigital.com/api/testimonios/update',
+  apiListarFilesTestimonio: 'https://back.iatecdigital.com/api/testimonios',
+  apiDeleteFileTestimonio: 'https://back.iatecdigital.com/api/testimonios',
 };

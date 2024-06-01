@@ -36,6 +36,9 @@ import { EspecialidadComponent } from './pages/admin/especialidad/especialidad.c
 import { CreateEspecialidadComponent } from './pages/admin/especialidad/create-especialidad/create-especialidad.component';
 import { EditEspecialidadComponent } from './pages/admin/especialidad/edit-especialidad/edit-especialidad.component';
 import { ContactoComponent } from './pages/admin/contacto/contacto.component';
+import { TestimonioComponent } from './pages/admin/testimonio/testimonio.component';
+import { CreateTestimonioComponent } from './pages/admin/testimonio/create-testimonio/create-testimonio.component';
+import { EditTestimonioComponent } from './pages/admin/testimonio/edit-testimonio/edit-testimonio.component';
 
 export const routes: Routes = [
   {
@@ -151,6 +154,21 @@ export const routes: Routes = [
         path: 'contactos',
         canActivate: [AuthGuard],
         component: ContactoComponent,
+      },
+      {
+        path: 'testimonios',
+        canActivate: [AuthGuard],
+        component: TestimonioComponent,
+      },
+      {
+        path: 'testimonios/create',
+        canActivate: [AuthGuard],
+        component: CreateTestimonioComponent,
+      },
+      {
+        path: 'testimonios/edit',
+        canActivate: [AuthGuard],
+        component: EditTestimonioComponent,
       },
     ],
   },

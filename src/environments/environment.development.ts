@@ -30,4 +30,8 @@ export const environment = {
     'http://127.0.0.1:8000/api/productos/especialidades',
   apiDeleteFileProducto: 'http://127.0.0.1:8000/api/productos',
   apiListarContactos: 'http://127.0.0.1:8000/api/contactos',
+  apiUrl3Testimonio: 'http://127.0.0.1:8000/api/testimonios/subir',
+  apiUpdateFileTestimonio: 'http://127.0.0.1:8000/api/testimonios/update',
+  apiListarFilesTestimonio: 'http://127.0.0.1:8000/api/testimonios',
+  apiDeleteFileTestimonio: 'http://127.0.0.1:8000/api/testimonios',
 };
