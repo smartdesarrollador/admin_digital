@@ -30,6 +30,7 @@ export class ProductoComponent {
   form: FormGroup = new FormGroup({});
   urlRaiz = environment.urlRaiz + '/';
   post = new Producto();
+  marcado = false;
   constructor(
     private formBuilder: FormBuilder,
     private dataService: ProductoService,
@@ -44,6 +45,7 @@ export class ProductoComponent {
   loadCategories() {
     return this.dataService.getCursos().subscribe((data: {}) => {
       console.log(data);
+
       this.listCategories = data;
     });
   }

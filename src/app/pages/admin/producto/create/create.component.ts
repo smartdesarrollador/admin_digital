@@ -62,6 +62,7 @@ export class CreateComponent {
       /* maestro: [null, Validators.required], */
       observacion: [null, Validators.required],
       precio: [null, Validators.required],
+      destacado: [false],
       /* categoria_producto_id: [null, Validators.required], */
     });
   }
@@ -116,6 +117,7 @@ export class CreateComponent {
     /* formData.append('maestro', this.form.value.maestro); */
     formData.append('observacion', this.form.value.observacion);
     formData.append('precio', this.form.value.precio);
+    formData.append('destacado', this.form.value.destacado);
     formData.append('categoria_producto_id', this.categoriaProductoId);
     this.dataService.uploadData(formData).subscribe((res) => {
       this.data = res;
