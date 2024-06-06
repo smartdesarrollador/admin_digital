@@ -134,6 +134,7 @@ export class EditComponent {
     const formData = new FormData();
     formData.append('id_producto', this.valor_id_producto);
     formData.append('nombre', this.form.value.nombre);
+    formData.append('resumen', this.form.value.resumen);
     formData.append('descripcion', this.form.value.descripcion);
     formData.append('duracion', this.form.value.duracion);
 
