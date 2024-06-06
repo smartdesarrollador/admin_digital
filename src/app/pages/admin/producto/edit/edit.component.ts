@@ -41,6 +41,7 @@ export class EditComponent {
   valor_id_producto: any;
   categoriaProductoId: any = 1;
   public Editor = ClassicEditor;
+  valor_destacado: any;
   post = new Producto();
   constructor(
     private formBuilder: FormBuilder,
@@ -57,6 +58,7 @@ export class EditComponent {
       const categoryId = params['categoryId'];
       this.valor_id_producto = categoryId;
     });
+    this.valor_destacado = this.dataService.selectCategory.destacado;
   }
 
   loadCategories() {
@@ -82,6 +84,9 @@ export class EditComponent {
         Validators.required,
       ],
       precio: [this.dataService.selectCategory.precio, Validators.required],
+      destacado: [
+        this.dataService.selectCategory.destacado == 'true' ? true : false,
+      ],
     });
   }
 
@@ -138,6 +143,7 @@ export class EditComponent {
     formData.append('maestro', this.form.value.maestro);
     formData.append('observacion', this.form.value.observacion);
     formData.append('precio', this.form.value.precio);
+    formData.append('destacado', this.form.value.destacado);
     formData.append('categoria_producto_id', this.categoriaProductoId);
 
     this.dataService.updateData(formData).subscribe((res) => {
