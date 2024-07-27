@@ -6,6 +6,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "~quill/dist/quill.bubble.css";
+@import "~quill/dist/quill.snow.css";
+
 body {
   /* background-color: #c6d8e7; */
   background-color: #ecf0f1;

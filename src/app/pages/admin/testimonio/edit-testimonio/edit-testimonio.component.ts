@@ -14,8 +14,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router, ActivatedRoute, RouterLink } from '@angular/router';
 import Swal from 'sweetalert2';
 import { environment } from 'src/environments/environment';
-import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+/* import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic'; */
+
+/*  1 - Quill */
+import { QuillModule } from 'ngx-quill';
+/*  /1 - Quill  */
 
 @Component({
   selector: 'app-edit-testimonio',
@@ -26,7 +30,10 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
     ReactiveFormsModule,
     HttpClientModule,
     RouterLink,
-    CKEditorModule,
+    /* CKEditorModule, */
+    /*  2 - Quill */
+    QuillModule,
+    /*  2 - Quill */
   ],
   templateUrl: './edit-testimonio.component.html',
   styleUrl: './edit-testimonio.component.css',
@@ -40,7 +47,34 @@ export class EditTestimonioComponent {
   urlRaiz = environment.urlRaiz + '/';
   valor_id_testimonio: any;
   categoriaTestimonioId: any = 1;
-  public Editor = ClassicEditor;
+  /* public Editor = ClassicEditor; */
+
+  htmlContent: any;
+
+  moduleQuill = {
+    toolbar: [
+      ['bold', 'italic', 'underline', 'strike'], // toggled buttons
+      ['blockquote', 'code-block'],
+
+      [{ header: 1 }, { header: 2 }], // custom button values
+      [{ list: 'ordered' }, { list: 'bullet' }],
+      [{ script: 'sub' }, { script: 'super' }], // superscript/subscript
+      [{ indent: '-1' }, { indent: '+1' }], // outdent/indent
+      [{ direction: 'rtl' }], // text direction
+
+      [{ size: ['small', false, 'large', 'huge'] }], // custom dropdown
+      [{ header: [1, 2, 3, 4, 5, 6, false] }],
+
+      [{ color: [] }, { background: [] }], // dropdown with defaults from theme
+      [{ font: [] }],
+      [{ align: [] }],
+
+      ['clean'], // remove formatting button
+
+      ['link', 'image', 'video'], // link and image, video
+    ],
+  };
+
   post = new Testimonio();
   constructor(
     private formBuilder: FormBuilder,
@@ -57,6 +91,12 @@ export class EditTestimonioComponent {
       const categoryId = params['categoryId'];
       this.valor_id_testimonio = categoryId;
     });
+  }
+
+  onChangeEditor(event: any): void {
+    if (event.html) {
+      this.htmlContent = event.html;
+    }
   }
 
   loadCategories() {

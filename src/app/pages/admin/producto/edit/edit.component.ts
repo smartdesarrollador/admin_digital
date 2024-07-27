@@ -14,8 +14,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router, ActivatedRoute, RouterLink } from '@angular/router';
 import Swal from 'sweetalert2';
 import { environment } from 'src/environments/environment';
-import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+/* import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic'; */
+/*  1 - Quill */
+import { QuillModule } from 'ngx-quill';
+/*  /1 - Quill  */
 
 @Component({
   selector: 'app-edit',
@@ -26,7 +29,10 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
     ReactiveFormsModule,
     HttpClientModule,
     RouterLink,
-    CKEditorModule,
+    /* CKEditorModule, */
+    /*  2 - Quill */
+    QuillModule,
+    /*  2 - Quill */
   ],
   templateUrl: './edit.component.html',
   styleUrl: './edit.component.css',
@@ -40,9 +46,34 @@ export class EditComponent {
   urlRaiz = environment.urlRaiz + '/';
   valor_id_producto: any;
   categoriaProductoId: any = 1;
-  public Editor = ClassicEditor;
+  /* public Editor = ClassicEditor; */
   valor_destacado: any;
   post = new Producto();
+  htmlContent: any;
+
+  moduleQuill = {
+    toolbar: [
+      ['bold', 'italic', 'underline', 'strike'], // toggled buttons
+      ['blockquote', 'code-block'],
+
+      [{ header: 1 }, { header: 2 }], // custom button values
+      [{ list: 'ordered' }, { list: 'bullet' }],
+      [{ script: 'sub' }, { script: 'super' }], // superscript/subscript
+      [{ indent: '-1' }, { indent: '+1' }], // outdent/indent
+      [{ direction: 'rtl' }], // text direction
+
+      [{ size: ['small', false, 'large', 'huge'] }], // custom dropdown
+      [{ header: [1, 2, 3, 4, 5, 6, false] }],
+
+      [{ color: [] }, { background: [] }], // dropdown with defaults from theme
+      [{ font: [] }],
+      [{ align: [] }],
+
+      ['clean'], // remove formatting button
+
+      ['link', 'image', 'video'], // link and image, video
+    ],
+  };
   constructor(
     private formBuilder: FormBuilder,
     private dataService: ProductoService,
@@ -59,6 +90,12 @@ export class EditComponent {
       this.valor_id_producto = categoryId;
     });
     this.valor_destacado = this.dataService.selectCategory.destacado;
+  }
+
+  onChangeEditor(event: any): void {
+    if (event.html) {
+      this.htmlContent = event.html;
+    }
   }
 
   loadCategories() {

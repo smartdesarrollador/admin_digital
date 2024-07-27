@@ -44,12 +44,12 @@
             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >Contenido</label
           >
-          <ckeditor
+          <!-- <ckeditor
             formControlName="descripcion"
             name="descripcion"
             [editor]="Editor"
             data="<p>Hello, world!</p>"
-          ></ckeditor>
+          ></ckeditor> -->
           <!-- <input
             type="text"
             id="descripcion"
@@ -57,6 +57,13 @@
             name="descripcion"
             class="form-control bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           /> -->
+          <quill-editor
+            formControlName="descripcion"
+            name="descripcion"
+            id="txtContent"
+            [modules]="moduleQuill"
+            (onEditorChanged)="onChangeEditor($event)"
+          ></quill-editor>
         </div>
         <div class="mb-5" form-group>
           <label
