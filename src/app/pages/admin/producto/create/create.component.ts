@@ -33,6 +33,7 @@ import { QuillModule } from 'ngx-quill';
 export class CreateComponent {
   listCategories: any = [];
   files_date: any;
+  files_date_pdf: any;
   submitted = false;
   data: any;
   form: FormGroup = new FormGroup({});
@@ -96,6 +97,7 @@ export class CreateComponent {
       descripcion: [null, Validators.required],
       duracion: [null, Validators.required],
       image: [null, Validators.required],
+      pdf: [null, Validators.required],
       /* maestro: [null, Validators.required], */
       observacion: [null, Validators.required],
       precio: [null, Validators.required],
@@ -139,6 +141,37 @@ export class CreateComponent {
     }
   }
 
+  uploadImagePdf(event: Event) {
+    if (event.target instanceof HTMLInputElement) {
+      if (event.target.files && event.target.files.length > 0) {
+        const filesPdf = event.target.files[0];
+        this.files_date_pdf = filesPdf;
+        const maxSizeInBytes = 5 * 1024 * 1024; // 5MB
+
+        if (filesPdf.size > maxSizeInBytes) {
+          console.log('La imagen excede el tamaño máximo permitido (5MB)');
+          this.alertaMaxFilePdf();
+          // Puedes mostrar un mensaje de error o realizar otra acción
+          event.target.value = ''; // Limpiar el input file
+          return;
+        }
+
+        if (filesPdf.type !== 'application/pdf') {
+          console.log('Solo se permiten archivos PDF');
+          this.alertaExtFilePdf();
+          // Puedes mostrar un mensaje de error o realizar otra acción
+          event.target.value = ''; // Limpiar el input file
+          return;
+        }
+
+        // Aquí puedes continuar con el proceso de carga de la imagen
+        console.log('Archivo seleccionado:', filesPdf);
+      } else {
+        console.log('No se seleccionó ningún archivo');
+      }
+    }
+  }
+
   onSubmit() {
     this.submitted = true;
     if (this.form.invalid) {
@@ -151,6 +184,7 @@ export class CreateComponent {
     formData.append('descripcion', this.form.value.descripcion);
     formData.append('duracion', this.form.value.duracion);
     formData.append('imagen', this.files_date, this.files_date.name);
+    formData.append('pdf', this.files_date_pdf, this.files_date_pdf.name);
     /* formData.append('maestro', this.form.value.maestro); */
     formData.append('observacion', this.form.value.observacion);
     formData.append('precio', this.form.value.precio);
@@ -188,6 +222,20 @@ export class CreateComponent {
     Swal.fire({
       icon: 'success',
       title: 'Registro eliminado',
+    });
+  }
+
+  alertaMaxFilePdf() {
+    Swal.fire({
+      icon: 'error',
+      title: 'La imagen excede el tamaño máximo permitido (5MB)',
+    });
+  }
+
+  alertaExtFilePdf() {
+    Swal.fire({
+      icon: 'error',
+      title: 'Solo se permiten archivos Pdf',
     });
   }
 }

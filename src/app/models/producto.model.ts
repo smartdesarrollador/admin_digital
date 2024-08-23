@@ -6,6 +6,8 @@ export class Producto {
   duracion?: string;
   imagen?: string;
   ruta_imagen?: string;
+  pdf?: string;
+  ruta_pdf?: string;
   /* maestro?: string; */
   observacion?: string;
   precio?: number;
