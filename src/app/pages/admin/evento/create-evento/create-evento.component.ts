@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { Producto } from 'src/app/models/producto.model';
-import { ProductoService } from 'src/app/services/producto.service';
+import { Evento } from 'src/app/models/evento.model';
+import { EventoService } from 'src/app/services/evento.service';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -9,13 +9,11 @@ import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { environment } from 'src/environments/environment';
 /* import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
- */
-/*  1 - Quill */
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic'; */
 import { QuillModule } from 'ngx-quill';
-/*  /1 - Quill  */
+
 @Component({
-  selector: 'app-create',
+  selector: 'app-create-evento',
   standalone: true,
   imports: [
     CommonModule,
@@ -23,24 +21,20 @@ import { QuillModule } from 'ngx-quill';
     ReactiveFormsModule,
     HttpClientModule,
     /* CKEditorModule, */
-    /*  2 - Quill */
     QuillModule,
-    /*  2 - Quill */
   ],
-  templateUrl: './create.component.html',
-  styleUrl: './create.component.css',
+  templateUrl: './create-evento.component.html',
+  styleUrl: './create-evento.component.css',
 })
-export class CreateComponent {
+export class CreateEventoComponent {
   listCategories: any = [];
   files_date: any;
-  files_date_pdf: any;
   submitted = false;
   data: any;
   form: FormGroup = new FormGroup({});
   urlRaiz = environment.urlRaiz + '/';
   categoriaProductoId: any = 1;
   /* public Editor = ClassicEditor; */
-  post = new Producto();
   htmlContent: any;
 
   moduleQuill = {
@@ -66,9 +60,10 @@ export class CreateComponent {
       ['link', 'image', 'video'], // link and image, video
     ],
   };
+  post = new Evento();
   constructor(
     private formBuilder: FormBuilder,
-    private dataService: ProductoService,
+    private dataService: EventoService,
     private router: Router
   ) {}
 
@@ -92,17 +87,10 @@ export class CreateComponent {
 
   createForm() {
     this.form = this.formBuilder.group({
-      nombre: [null, Validators.required],
-      resumen: [null, Validators.required],
-      descripcion: [null, Validators.required],
-      duracion: [null, Validators.required],
+      titulo: [null, Validators.required],
+      fecha: [null, Validators.required],
+      codigo: [null, Validators.required],
       image: [null, Validators.required],
-      pdf: [null, Validators.required],
-      /* maestro: [null, Validators.required], */
-      observacion: [null, Validators.required],
-      precio: [null, Validators.required],
-      destacado: [false],
-      /* categoria_producto_id: [null, Validators.required], */
     });
   }
 
@@ -141,37 +129,6 @@ export class CreateComponent {
     }
   }
 
-  uploadImagePdf(event: Event) {
-    if (event.target instanceof HTMLInputElement) {
-      if (event.target.files && event.target.files.length > 0) {
-        const filesPdf = event.target.files[0];
-        this.files_date_pdf = filesPdf;
-        const maxSizeInBytes = 5 * 1024 * 1024; // 5MB
-
-        if (filesPdf.size > maxSizeInBytes) {
-          console.log('La imagen excede el tamaño máximo permitido (5MB)');
-          this.alertaMaxFilePdf();
-          // Puedes mostrar un mensaje de error o realizar otra acción
-          event.target.value = ''; // Limpiar el input file
-          return;
-        }
-
-        if (filesPdf.type !== 'application/pdf') {
-          console.log('Solo se permiten archivos PDF');
-          this.alertaExtFilePdf();
-          // Puedes mostrar un mensaje de error o realizar otra acción
-          event.target.value = ''; // Limpiar el input file
-          return;
-        }
-
-        // Aquí puedes continuar con el proceso de carga de la imagen
-        console.log('Archivo seleccionado:', filesPdf);
-      } else {
-        console.log('No se seleccionó ningún archivo');
-      }
-    }
-  }
-
   onSubmit() {
     this.submitted = true;
     if (this.form.invalid) {
@@ -179,21 +136,15 @@ export class CreateComponent {
     }
 
     const formData = new FormData();
-    formData.append('nombre', this.form.value.nombre);
-    formData.append('resumen', this.form.value.resumen);
-    formData.append('descripcion', this.form.value.descripcion);
-    formData.append('duracion', this.form.value.duracion);
+    formData.append('titulo', this.form.value.titulo);
+    formData.append('fecha', this.form.value.fecha);
+    formData.append('codigo', this.form.value.codigo);
     formData.append('imagen', this.files_date, this.files_date.name);
-    formData.append('pdf', this.files_date_pdf, this.files_date_pdf.name);
-    /* formData.append('maestro', this.form.value.maestro); */
-    formData.append('observacion', this.form.value.observacion);
-    formData.append('precio', this.form.value.precio);
-    formData.append('destacado', this.form.value.destacado);
-    formData.append('categoria_producto_id', this.categoriaProductoId);
     this.dataService.uploadData(formData).subscribe((res) => {
       this.data = res;
       console.log(this.data);
       this.alerta();
+      this.router.navigate(['/admin/eventos']);
     });
   }
 
@@ -222,20 +173,6 @@ export class CreateComponent {
     Swal.fire({
       icon: 'success',
       title: 'Registro eliminado',
-    });
-  }
-
-  alertaMaxFilePdf() {
-    Swal.fire({
-      icon: 'error',
-      title: 'El Pdf excede el tamaño máximo permitido (5MB)',
-    });
-  }
-
-  alertaExtFilePdf() {
-    Swal.fire({
-      icon: 'error',
-      title: 'Solo se permiten archivos Pdf',
     });
   }
 }

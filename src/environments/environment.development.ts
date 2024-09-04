@@ -34,4 +34,8 @@ export const environment = {
   apiUpdateFileTestimonio: 'http://127.0.0.1:8000/api/testimonios/update',
   apiListarFilesTestimonio: 'http://127.0.0.1:8000/api/testimonios',
   apiDeleteFileTestimonio: 'http://127.0.0.1:8000/api/testimonios',
+  apiUrl3Evento: 'http://127.0.0.1:8000/api/eventos/subir',
+  apiUpdateFileEvento: 'http://127.0.0.1:8000/api/eventos/update',
+  apiListarFilesEvento: 'http://127.0.0.1:8000/api/eventos',
+  apiDeleteFileEvento: 'http://127.0.0.1:8000/api/eventos',
 };

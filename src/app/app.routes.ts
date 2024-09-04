@@ -39,6 +39,9 @@ import { ContactoComponent } from './pages/admin/contacto/contacto.component';
 import { TestimonioComponent } from './pages/admin/testimonio/testimonio.component';
 import { CreateTestimonioComponent } from './pages/admin/testimonio/create-testimonio/create-testimonio.component';
 import { EditTestimonioComponent } from './pages/admin/testimonio/edit-testimonio/edit-testimonio.component';
+import { EventoComponent } from './pages/admin/evento/evento.component';
+import { CreateEventoComponent } from './pages/admin/evento/create-evento/create-evento.component';
+import { EditEventoComponent } from './pages/admin/evento/edit-evento/edit-evento.component';
 
 export const routes: Routes = [
   {
@@ -169,6 +172,21 @@ export const routes: Routes = [
         path: 'testimonios/edit',
         canActivate: [AuthGuard],
         component: EditTestimonioComponent,
+      },
+      {
+        path: 'eventos',
+        canActivate: [AuthGuard],
+        component: EventoComponent,
+      },
+      {
+        path: 'eventos/create',
+        canActivate: [AuthGuard],
+        component: CreateEventoComponent,
+      },
+      {
+        path: 'eventos/edit',
+        canActivate: [AuthGuard],
+        component: EditEventoComponent,
       },
     ],
   },

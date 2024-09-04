@@ -248,7 +248,7 @@ export class EditComponent {
   alerta() {
     Swal.fire({
       icon: 'success',
-      title: 'Imagen subida',
+      title: 'Registro editado',
     });
   }
 
@@ -269,7 +269,7 @@ export class EditComponent {
   alertaMaxFilePdf() {
     Swal.fire({
       icon: 'error',
-      title: 'La imagen excede el tamaño máximo permitido (5MB)',
+      title: 'El pdf excede el tamaño máximo permitido (5MB)',
     });
   }
 

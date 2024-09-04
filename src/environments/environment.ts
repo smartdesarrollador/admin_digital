@@ -76,4 +76,8 @@ export const environment = {
     'https://back.iatecdigital.com/api/testimonios/update',
   apiListarFilesTestimonio: 'https://back.iatecdigital.com/api/testimonios',
   apiDeleteFileTestimonio: 'https://back.iatecdigital.com/api/testimonios',
+  apiUrl3Evento: 'https://back.iatecdigital.com/api/eventos/subir',
+  apiUpdateFileEvento: 'https://back.iatecdigital.com/api/eventos/update',
+  apiListarFilesEvento: 'https://back.iatecdigital.com/api/eventos',
+  apiDeleteFileEvento: 'https://back.iatecdigital.com/api/eventos',
 };
