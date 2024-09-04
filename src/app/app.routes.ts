@@ -42,6 +42,15 @@ import { EditTestimonioComponent } from './pages/admin/testimonio/edit-testimoni
 import { EventoComponent } from './pages/admin/evento/evento.component';
 import { CreateEventoComponent } from './pages/admin/evento/create-evento/create-evento.component';
 import { EditEventoComponent } from './pages/admin/evento/edit-evento/edit-evento.component';
+import { BannerCurso } from './models/banner_curso.model';
+import { BannerCursoComponent } from './pages/admin/banner-curso/banner-curso.component';
+import { BannerEspecialidadComponent } from './pages/admin/banner-especialidad/banner-especialidad.component';
+import { BannerContactoComponent } from './pages/admin/banner-contacto/banner-contacto.component';
+import { BannerEventoComponent } from './pages/admin/banner-evento/banner-evento.component';
+import { EditBannerCursoComponent } from './pages/admin/banner-curso/edit-banner-curso/edit-banner-curso.component';
+import { EditBannerEspecialidadComponent } from './pages/admin/banner-especialidad/edit-banner-especialidad/edit-banner-especialidad.component';
+import { EditBannerContactoComponent } from './pages/admin/banner-contacto/edit-banner-contacto/edit-banner-contacto.component';
+import { EditBannerEventoComponent } from './pages/admin/banner-evento/edit-banner-evento/edit-banner-evento.component';
 
 export const routes: Routes = [
   {
@@ -89,7 +98,7 @@ export const routes: Routes = [
         component: DashboardComponent,
       },
       {
-        path: 'banners',
+        path: 'banner/principal',
         canActivate: [AuthGuard],
         component: BannersComponent,
       },
@@ -97,6 +106,46 @@ export const routes: Routes = [
         path: 'update/file',
         canActivate: [AuthGuard],
         component: UpdateFileComponent,
+      },
+      {
+        path: 'banner/curso',
+        canActivate: [AuthGuard],
+        component: BannerCursoComponent,
+      },
+      {
+        path: 'banner/curso/edit',
+        canActivate: [AuthGuard],
+        component: EditBannerCursoComponent,
+      },
+      {
+        path: 'banner/especialidad',
+        canActivate: [AuthGuard],
+        component: BannerEspecialidadComponent,
+      },
+      {
+        path: 'banner/especialidad/edit',
+        canActivate: [AuthGuard],
+        component: EditBannerEspecialidadComponent,
+      },
+      {
+        path: 'banner/contacto',
+        canActivate: [AuthGuard],
+        component: BannerContactoComponent,
+      },
+      {
+        path: 'banner/contacto/edit',
+        canActivate: [AuthGuard],
+        component: EditBannerContactoComponent,
+      },
+      {
+        path: 'banner/evento',
+        canActivate: [AuthGuard],
+        component: BannerEventoComponent,
+      },
+      {
+        path: 'banner/evento/edit',
+        canActivate: [AuthGuard],
+        component: EditBannerEventoComponent,
       },
       {
         path: 'mision',

@@ -38,4 +38,17 @@ export const environment = {
   apiUpdateFileEvento: 'http://127.0.0.1:8000/api/eventos/update',
   apiListarFilesEvento: 'http://127.0.0.1:8000/api/eventos',
   apiDeleteFileEvento: 'http://127.0.0.1:8000/api/eventos',
+  apiUpdateBannerCurso: 'http://127.0.0.1:8000/api/banner_curso/update',
+  apiListarBannerCurso: 'http://127.0.0.1:8000/api/banner_curso',
+  apiDeleteBannerCurso: 'http://127.0.0.1:8000/api/banner_curso',
+  apiUpdateBannerEspecialidad:
+    'http://127.0.0.1:8000/api/banner_especialidad/update',
+  apiListarBannerEspecialidad: 'http://127.0.0.1:8000/api/banner_especialidad',
+  apiDeleteBannerEspecialidad: 'http://127.0.0.1:8000/api/banner_especialidad',
+  apiUpdateBannerContacto: 'http://127.0.0.1:8000/api/banner_contacto/update',
+  apiListarBannerContacto: 'http://127.0.0.1:8000/api/banner_contacto',
+  apiDeleteBannerContacto: 'http://127.0.0.1:8000/api/banner_contacto',
+  apiUpdateBannerEvento: 'http://127.0.0.1:8000/api/banner_evento/update',
+  apiListarBannerEvento: 'http://127.0.0.1:8000/api/banner_evento',
+  apiDeleteBannerEvento: 'http://127.0.0.1:8000/api/banner_evento',
 };

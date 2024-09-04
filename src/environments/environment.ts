@@ -80,4 +80,21 @@ export const environment = {
   apiUpdateFileEvento: 'https://back.iatecdigital.com/api/eventos/update',
   apiListarFilesEvento: 'https://back.iatecdigital.com/api/eventos',
   apiDeleteFileEvento: 'https://back.iatecdigital.com/api/eventos',
+  apiUpdateBannerCurso: 'https://back.iatecdigital.com/api/banner_curso/update',
+  apiListarBannerCurso: 'https://back.iatecdigital.com/api/banner_curso',
+  apiDeleteBannerCurso: 'https://back.iatecdigital.com/api/banner_curso',
+  apiUpdateBannerEspecialidad:
+    'https://back.iatecdigital.com/api/banner_especialidad/update',
+  apiListarBannerEspecialidad:
+    'https://back.iatecdigital.com/api/banner_especialidad',
+  apiDeleteBannerEspecialidad:
+    'https://back.iatecdigital.com/api/banner_especialidad',
+  apiUpdateBannerContacto:
+    'https://back.iatecdigital.com/api/banner_contacto/update',
+  apiListarBannerContacto: 'https://back.iatecdigital.com/api/banner_contacto',
+  apiDeleteBannerContacto: 'https://back.iatecdigital.com/api/banner_contacto',
+  apiUpdateBannerEvento:
+    'https://back.iatecdigital.com/api/banner_evento/update',
+  apiListarBannerEvento: 'https://back.iatecdigital.com/api/banner_evento',
+  apiDeleteBannerEvento: 'https://back.iatecdigital.com/api/banner_evento',
 };
