@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import Swal from 'sweetalert2';
 import { environment } from 'src/environments/environment';
+import * as XLSX from 'xlsx';
 
 @Component({
   selector: 'app-contacto',
@@ -46,5 +47,41 @@ export class ContactoComponent {
       console.log(data);
       this.listContactos = data;
     });
+  }
+
+  exportToExcel(): void {
+    // Preparar los datos para el Excel
+    const dataToExport = this.listContactos.map((contacto: any) => {
+      return {
+        Nombre: contacto.nombre,
+        Correo: contacto.correo,
+        Teléfono: contacto.telefono,
+        Asunto: contacto.asunto,
+      };
+    });
+
+    // Crear el libro de trabajo y la hoja
+    const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(dataToExport);
+    const workbook: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, 'Contactos');
+
+    // Generar el archivo y descargarlo
+    const excelBuffer: any = XLSX.write(workbook, {
+      bookType: 'xlsx',
+      type: 'array',
+    });
+    this.saveExcelFile(excelBuffer, 'contactos');
+  }
+
+  private saveExcelFile(buffer: any, fileName: string): void {
+    const data: Blob = new Blob([buffer], {
+      type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+    });
+    const url: string = window.URL.createObjectURL(data);
+    const link: HTMLAnchorElement = document.createElement('a');
+    link.href = url;
+    link.download = `${fileName}_${new Date().toLocaleDateString()}.xlsx`;
+    link.click();
+    window.URL.revokeObjectURL(url);
   }
 }
