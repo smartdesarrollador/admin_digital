@@ -8,7 +8,7 @@ export class Producto {
   ruta_imagen?: string;
   pdf?: string;
   ruta_pdf?: string;
-  /* maestro?: string; */
+  maestro?: string;
   observacion?: string;
   precio?: number;
   destacado?: string;

@@ -132,7 +132,7 @@ export class EditEspecialidadComponent {
       duracion: [this.dataService.selectCategory.duracion, Validators.required],
       image: [null],
       pdf: [null],
-      /* maestro: [this.dataService.selectCategory.maestro, Validators.required], */
+      maestro: [this.dataService.selectCategory.maestro, Validators.required],
       observacion: [
         this.dataService.selectCategory.observacion,
         Validators.required,
@@ -230,7 +230,7 @@ export class EditEspecialidadComponent {
     if (this.files_date_pdf) {
       formData.append('pdf', this.files_date_pdf, this.files_date_pdf.name);
     }
-    /* formData.append('maestro', this.form.value.maestro); */
+    formData.append('maestro', this.form.value.maestro);
     formData.append('observacion', this.form.value.observacion);
     formData.append('precio', this.form.value.precio);
     formData.append('destacado', this.form.value.destacado);

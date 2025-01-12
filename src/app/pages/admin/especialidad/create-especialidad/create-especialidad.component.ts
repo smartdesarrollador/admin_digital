@@ -99,7 +99,7 @@ export class CreateEspecialidadComponent {
       duracion: [null, Validators.required],
       image: [null, Validators.required],
       pdf: [null, Validators.required],
-      /* maestro: [null, Validators.required], */
+      maestro: [null, Validators.required],
       observacion: [null, Validators.required],
       precio: [null, Validators.required],
       destacado: [false],
@@ -186,7 +186,7 @@ export class CreateEspecialidadComponent {
     formData.append('duracion', this.form.value.duracion);
     formData.append('imagen', this.files_date, this.files_date.name);
     formData.append('pdf', this.files_date_pdf, this.files_date_pdf.name);
-    /* formData.append('maestro', this.form.value.maestro); */
+    formData.append('maestro', this.form.value.maestro);
     formData.append('observacion', this.form.value.observacion);
     formData.append('precio', this.form.value.precio);
     formData.append('destacado', this.form.value.destacado);

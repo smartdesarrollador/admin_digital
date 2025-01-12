@@ -133,7 +133,7 @@ export class EditComponent {
       duracion: [this.dataService.selectCategory.duracion, Validators.required],
       image: [null],
       pdf: [null],
-      /* maestro: [this.dataService.selectCategory.maestro, Validators.required], */
+      maestro: [this.dataService.selectCategory.maestro, Validators.required],
       observacion: [
         this.dataService.selectCategory.observacion,
         Validators.required,
