@@ -54,4 +54,8 @@ export const environment = {
   apiUpdateBannerSolucion: 'http://127.0.0.1:8000/api/banner_solucion/update',
   apiListarBannerSolucion: 'http://127.0.0.1:8000/api/banner_solucion',
   apiDeleteBannerSolucion: 'http://127.0.0.1:8000/api/banner_solucion',
+  apiUrl3Solucion: 'http://127.0.0.1:8000/api/soluciones/subir',
+  apiUpdateFileSolucion: 'http://127.0.0.1:8000/api/soluciones/update',
+  apiListarFilesSolucion: 'http://127.0.0.1:8000/api/soluciones',
+  apiDeleteFileSolucion: 'http://127.0.0.1:8000/api/soluciones',
 };
