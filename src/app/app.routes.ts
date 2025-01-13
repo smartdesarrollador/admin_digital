@@ -51,6 +51,8 @@ import { EditBannerCursoComponent } from './pages/admin/banner-curso/edit-banner
 import { EditBannerEspecialidadComponent } from './pages/admin/banner-especialidad/edit-banner-especialidad/edit-banner-especialidad.component';
 import { EditBannerContactoComponent } from './pages/admin/banner-contacto/edit-banner-contacto/edit-banner-contacto.component';
 import { EditBannerEventoComponent } from './pages/admin/banner-evento/edit-banner-evento/edit-banner-evento.component';
+import { BannerSolucionComponent } from './pages/admin/banner-solucion/banner-solucion.component';
+import { EditBannerSolucionComponent } from './pages/admin/banner-solucion/edit-banner-solucion/edit-banner-solucion.component';
 
 export const routes: Routes = [
   {
@@ -146,6 +148,16 @@ export const routes: Routes = [
         path: 'banner/evento/edit',
         canActivate: [AuthGuard],
         component: EditBannerEventoComponent,
+      },
+      {
+        path: 'banner/solucion',
+        canActivate: [AuthGuard],
+        component: BannerSolucionComponent,
+      },
+      {
+        path: 'banner/solucion/edit',
+        canActivate: [AuthGuard],
+        component: EditBannerSolucionComponent,
       },
       {
         path: 'mision',

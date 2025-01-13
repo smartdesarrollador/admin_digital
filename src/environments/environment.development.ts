@@ -51,4 +51,7 @@ export const environment = {
   apiUpdateBannerEvento: 'http://127.0.0.1:8000/api/banner_evento/update',
   apiListarBannerEvento: 'http://127.0.0.1:8000/api/banner_evento',
   apiDeleteBannerEvento: 'http://127.0.0.1:8000/api/banner_evento',
+  apiUpdateBannerSolucion: 'http://127.0.0.1:8000/api/banner_solucion/update',
+  apiListarBannerSolucion: 'http://127.0.0.1:8000/api/banner_solucion',
+  apiDeleteBannerSolucion: 'http://127.0.0.1:8000/api/banner_solucion',
 };
